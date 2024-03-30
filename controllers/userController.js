@@ -81,12 +81,16 @@ const updateUser = async (req, res) => {
       //get userId from session
       const userId = req.session.userAuth;
 
-      const user = await User.findByIdAndUpdate(userId, {
-        username,
-        phone_number,
-        email,
-        address,
-      });
+      const user = await User.findByIdAndUpdate(
+        userId,
+        {
+          username,
+          phone_number,
+          email,
+          address,
+        },
+        { new: true }
+      );
 
       if (!user) {
         return res
@@ -177,7 +181,11 @@ const updateAddress = async (req, res) => {
     const userId = req.session.userAuth;
 
     // Find the user by ID
-    const user = await User.findByIdAndUpdate(userId, { address });
+    const user = await User.findByIdAndUpdate(
+      userId,
+      { address },
+      { new: true }
+    );
 
     if (!user) {
       return res

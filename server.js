@@ -9,7 +9,9 @@ const session = require("express-session");
 const globalErrHandler = require("./middlewares/globalHandler");
 const port = process.env.PORT;
 const userRoutes = require("./routes/userRoute");
+const productRoutes = require("./routes/product");
 const bodyParser = require("body-parser");
+
 app.use(bodyParser.json());
 app.use(express.json());
 
@@ -28,6 +30,7 @@ app.use(
 );
 
 app.use("/users", userRoutes);
+app.use("/products", productRoutes);
 
 // *Error handler middleware
 app.use(globalErrHandler);

@@ -21,22 +21,18 @@ const productSchema = new mongoose.Schema(
     category: {
       type: String,
       required: true,
-      enum: [
-        "Fashion",
-        "Electronics",
-        "Home Appliances",
-        "Handicrafts",
-        "Stationary",
-        "Books",
-        "other",
-      ],
     },
     quantity: {
       type: Number,
       required: true,
     },
+    reviews: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Review",
+      },
+    ],
     images: [String],
-
     // Define any other fields as needed
   },
   {
