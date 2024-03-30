@@ -1,26 +1,35 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { userRegisterValidate, userProfileUpdateValidate } = require('../utils/userValidation')
-const { register, loginUser, updateUser, getUserInfo, logoutUser, updateAddress } = require('../controllers/userController');
+const protected = require("../middlewares/protected");
+const {
+  userRegisterValidate,
+  userProfileUpdateValidate,
+} = require("../utils/userValidation");
+const {
+  register,
+  loginUser,
+  updateUser,
+  getUserInfo,
+  logoutUser,
+  updateAddress,
+} = require("../controllers/userController");
 
 //creating user
-router.post('/register', userRegisterValidate, register);
+router.post("/register", userRegisterValidate, register);
 
 //login of user
-router.post('/login', loginUser);
+router.post("/login", loginUser);
 
 //update user
-router.put('/updateUser', userProfileUpdateValidate, updateUser);
+router.put("/updateUser", userProfileUpdateValidate, updateUser);
 
 //user info
-router.get('/userinfo', getUserInfo);
+router.get("/userinfo", protected, getUserInfo);
 
 //logout user
-router.delete('/logout', logoutUser);
+router.delete("/logout", logoutUser);
 
 //update address
-router.put('/update-address', updateAddress)
-
-
+router.put("/update-address", updateAddress);
 
 module.exports = router;

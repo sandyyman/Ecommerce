@@ -3,6 +3,7 @@ dotenv.config();
 require("./config/db");
 const express = require("express");
 const mongoose = require("mongoose");
+const MongoStore = require("connect-mongo");
 const app = express();
 const session = require("express-session");
 const port = process.env.PORT;
@@ -18,6 +19,10 @@ app.use(
     secret: sessionSecret,
     resave: false,
     saveUninitialized: false,
+    store: new MongoStore({
+      mongoUrl: process.env.MONGO_URL,
+      ttl: 24 * 60 * 60,
+    }),
   })
 );
 
