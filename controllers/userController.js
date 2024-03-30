@@ -1,6 +1,7 @@
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const { userProfileUpdateValidate } = require("../utils/userValidation");
+const appErr = require("../utils/appErr");
 
 //registration
 const register = async (req, res) => {
@@ -56,15 +57,13 @@ const loginUser = async (req, res) => {
 
     // Create session data
     req.session.userAuth = user._id;
-    console.log(req.session);
+    // console.log(req.session);
 
     return res.status(200).json({ success: true, message: "Login successful" });
   } catch (error) {
     console.error("Login error:", error);
     console.error("Request body:", req.body);
-    return res
-      .status(500)
-      .json({ success: false, message: "Internal server error." });
+    return res(appErr(error, 403));
   }
 };
 

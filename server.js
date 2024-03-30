@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo");
 const app = express();
 const session = require("express-session");
+const globalErrHandler = require("./middlewares/globalHandler");
 const port = process.env.PORT;
 const userRoutes = require("./routes/userRoute");
 const bodyParser = require("body-parser");
@@ -27,6 +28,9 @@ app.use(
 );
 
 app.use("/users", userRoutes);
+
+// *Error handler middleware
+app.use(globalErrHandler);
 
 app.listen(port, () => {
   console.log("Server running");
