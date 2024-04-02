@@ -1,4 +1,6 @@
 const Review = require("../models/reviews");
+const User = require("../models/user");
+const Product = require("../models/product");
 const appErr = require("../utils/appErr");
 
 // GET /reviews/{id}: Get details of a specific review
@@ -20,15 +22,21 @@ const createReview = async (req, res) => {
   const { productId, rating, comment } = req.body;
   try {
     const userId = req.session.userAuth;
-    console.log("Am getting executed lol");
-    console.log(productId, userId, rating, comment);
+    const user = await User.findById(userId);
+    const product = await Product.findById(productId);
+    if (!product) {
+      return res.json(appErr("Product isnt awailable", 400));
+    }
+
     const newReview = await Review.create({
       user: userId,
       product: productId,
       rating,
       comment,
     });
-    console.log(newReview);
+    product.reviews.push(newReview._id);
+    await product.save({ validateBeforeSave: false });
+
     res.json({ data: newReview });
   } catch (error) {
     return res.json(appErr(error.message, 404));
