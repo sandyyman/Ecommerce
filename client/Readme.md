@@ -27,16 +27,21 @@
   git clone https://github.com/naveengowda7/Ecommerce.git
 ```
 
-#### 2) React-router-dom
+#### 2) Change Directory to client
+```
+  cd client
+```
+
+#### 3) React-router-dom
 ```
   npm install react-router-dom
 ```
 
-#### 3) web-vitals
+#### 4) web-vitals
 ```
   npm install web-vitals
 ```
-#### 4) Start the React-app
+#### 5) Start the React-app
 ```
   npm start
 ```
