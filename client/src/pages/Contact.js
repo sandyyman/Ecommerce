@@ -1,5 +1,7 @@
 import React from 'react'
 import Layout from './../components/layout/Layout';
+import { MdAttachEmail, MdOutlineSupportAgent } from "react-icons/md";
+import { FaPhoneSquareAlt } from "react-icons/fa";
 
 //contact page
 const Contact = () => {
