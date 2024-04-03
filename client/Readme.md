@@ -32,15 +32,11 @@
   cd client
 ```
 
-#### 3) React-router-dom
+#### 3) Run this command inside the Terminal
 ```
-  npm install react-router-dom
+  npm install @testing-library/jest-dom @testing-library/react @testing-library/user-event react react-dom react-router-dom react-scripts web-vitals react-icons --save
 ```
 
-#### 4) web-vitals
-```
-  npm install web-vitals
-```
 #### 5) Start the React-app
 ```
   npm start
