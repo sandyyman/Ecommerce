@@ -27,16 +27,17 @@
   git clone https://github.com/naveengowda7/Ecommerce.git
 ```
 
-#### 2) React-router-dom
+#### 2) Change Directory to client
 ```
-  npm install react-router-dom
+  cd client
 ```
 
-#### 3) web-vitals
+#### 3) Run this command inside the Terminal
 ```
-  npm install web-vitals
+  npm install @testing-library/jest-dom @testing-library/react @testing-library/user-event react react-dom react-router-dom react-scripts web-vitals react-icons --save
 ```
-#### 4) Start the React-app
+
+#### 5) Start the React-app
 ```
   npm start
 ```
