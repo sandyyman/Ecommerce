@@ -7,5 +7,100 @@
   box-sizing: border-box;
 }
 
+body {
+  background: #e9d4ff;
+}
+
 /* font-family: "Poppins", sans-serif; */
 /* font-family: "Playfair Display", serif; */
+
+/* NavBar CSS*/
+.navbar {
+  font-family: "Poppins", sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  text-transform: uppercase;
+  box-shadow: 0 8px 6px -6px gray;
+  --webkit-box-shadow: 0 8px 6px -6px gray;
+  border-bottom: 0.35px solid gray !important;
+}
+
+.nav-link {
+  font-weight: 300;
+}
+
+.active {
+  border-bottom: 2px solid black;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-family: 'robot', sans-serif;
+  letter-spacing: 3px;
+
+}
+
+/* Page Not Found*/
+.pnf {
+  display: flex;
+  min-height: 65vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pnf-title {
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.pnf-btn {
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/*about section */
+.aboutus .ex-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutus {
+  padding: 1rem;
+}
+
+.aboutus .au-Two {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+
+
+
+/* Footer Css*/
+
+.footer {
+  color: white;
+  padding: 25px;
+  background: #000;
+  background: -webkit-linear-gradient(to bottom,
+      #434343,
+      #000);
+  background: linear-gradient(to bottom, #434343, #000);
+}
+
+.footer a {
+  text-decoration: none;
+  color: whitesmoke;
+  padding: 10px;
+}
+
+.footer a:hover {
+  color: #ffefba;
+  border-bottom: 1px solid #ffefba;
+}
