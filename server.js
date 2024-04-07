@@ -2,7 +2,6 @@ const dotenv = require("dotenv");
 dotenv.config();
 require("./config/db");
 const express = require("express");
-const mongoose = require("mongoose");
 const MongoStore = require("connect-mongo");
 const app = express();
 const session = require("express-session");
@@ -12,6 +11,7 @@ const userRoutes = require("./routes/userRoute");
 const reviewRoutes = require("./routes/reviews");
 const productRoutes = require("./routes/product");
 const bodyParser = require("body-parser");
+const cartRoutes = require("./routes/cartRoute");
 
 app.use(bodyParser.json());
 app.use(express.json());
@@ -33,6 +33,7 @@ app.use(
 app.use("/users", userRoutes);
 app.use("/products", productRoutes);
 app.use("/reviews", reviewRoutes);
+app.use("/cart", cartRoutes);
 
 // *Error handler middleware
 app.use(globalErrHandler);
