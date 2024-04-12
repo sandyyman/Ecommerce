@@ -39,5 +39,5 @@ app.use("/reviews", reviewRoutes);
 app.use(globalErrHandler);
 
 app.listen(port, () => {
-    console.log("Server running");
+    console.log("Server running in port ", port);
 })

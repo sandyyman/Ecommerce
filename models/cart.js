@@ -10,12 +10,11 @@ const cartSchema = new mongoose.Schema(
     product_id: [
       {
         type: String,
-        required: true,
+        
       },
     ],
     total_amount: {
       type: String,
-      required: true,
     },
   },
   {
