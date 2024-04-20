@@ -15,29 +15,70 @@ body {
 /* font-family: "Playfair Display", serif; */
 
 /* NavBar CSS*/
-.navbar {
-  font-family: "Poppins", sans-serif;
-  font-size: 17px;
-  line-height: 26px;
-  text-transform: uppercase;
-  box-shadow: 0 8px 6px -6px gray;
-  --webkit-box-shadow: 0 8px 6px -6px gray;
-  border-bottom: 0.35px solid gray !important;
+.nav-logo {
+  text-decoration: none;
+  color: #265a65;
 }
 
-.nav-link {
-  font-weight: 300;
+.logo-text {
+  display: inline;
+  font-family: 'playfair';
+  font-size: xx-large;
 }
 
-.active {
-  border-bottom: 2px solid black;
+nav ul {
+  width: 100%;
 }
 
-.navbar-brand {
-  font-weight: 700;
-  font-family: 'robot', sans-serif;
-  letter-spacing: 3px;
+.nav-list-1 {
+  font-size: smaller;
+  height: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
 
+.nav-list-2 {
+  height: 5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-list-grid-container {
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  background-color: #575563;
+}
+
+.nav-list-grid-container li {
+  background-color: #575563;
+  border: 1px solid whitesmoke;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.nav-list-mar {
+  margin: 0;
+}
+
+.nav-list-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+li:hover {
+  color: #55c7de;
+  cursor: pointer;
+}
+
+.nav-list-grid-container li:hover {
+  background-color: #55c7de;
+  color: whitesmoke !important;
 }
 
 /* Page Not Found*/
