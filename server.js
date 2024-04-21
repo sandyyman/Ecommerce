@@ -10,10 +10,11 @@ const session = require('express-session');
 const port = process.env.PORT
 const userRoutes = require('./routes/userRoute');
 const cartRoutes = require('./routes/cartRoute');
-const reviewRoutes = require("./routes/reviews");
+// const reviewRoutes = require("./routes/reviews");
 const productRoutes = require("./routes/product");
 const bodyParser = require('body-parser');
 const stripe = require('stripe')('');
+const paymentRoutes = require("./routes/paymentRoutes")
 
 app.use(bodyParser.json());
 app.use(express.json());
@@ -32,12 +33,13 @@ app.use(
     })
 );
 app.use('/users', userRoutes);
-app.use('cart', cartRoutes);
+app.use('/cart', cartRoutes);
 app.use("/products", productRoutes);
-app.use("/reviews", reviewRoutes);
+app.use("/payment", paymentRoutes);
+// app.use("/reviews", reviewRoutes);
 
 app.use(globalErrHandler);
 
 app.listen(port, () => {
-    console.log("Server running in port ", port);
+    console.log("Server running");
 })
