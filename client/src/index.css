@@ -1,20 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400&display=swap");
 
+/*-------------------------
+-----Universal-Requirements-----------
+---------------------------*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style-type: none;
 }
 
-body {
-  background: #e9d4ff;
+img {
+  margin-right: 1rem;
 }
 
-/* font-family: "Poppins", sans-serif; */
-/* font-family: "Playfair Display", serif; */
+hr {
+  margin: 0;
+}
 
-/* NavBar CSS*/
+input[type="text"] {
+  width: 20rem;
+  padding: 0.25rem 1rem;
+  font-style: italic;
+  font-family: "Poppins";
+  border: 0.5px solid rgb(166, 157, 157);
+}
+
+/*-------------------------
+-----Nav-section-----------
+---------------------------*/
+
 .nav-logo {
   text-decoration: none;
   color: #265a65;
@@ -81,7 +97,41 @@ li:hover {
   color: whitesmoke !important;
 }
 
-/* Page Not Found*/
+
+/*-------------------------
+-----Home-Page-----------
+---------------------------*/
+/* Add specific styles for home page if needed */
+
+
+.nav-ul-hp {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.nav-ul-hp li {
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 10px;
+  border-radius: 0.25rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.item-hp {
+  text-decoration: none;
+  color: black
+}
+
+
+
+
+
+
+/*-------------------------
+-----Page-Not-Found-----------
+---------------------------*/
 .pnf {
   display: flex;
   min-height: 65vh;
@@ -103,7 +153,9 @@ li:hover {
   margin-top: 10px;
 }
 
-/*about section */
+/*-------------------------
+-----About-section-----------
+---------------------------*/
 .aboutus .ex-head {
   display: flex;
   justify-content: center;
@@ -121,17 +173,14 @@ li:hover {
   justify-items: center;
 }
 
-
-
-/* Footer Css*/
-
+/*-------------------------
+-----Footer-section-----------
+---------------------------*/
 .footer {
   color: white;
   padding: 25px;
   background: #000;
-  background: -webkit-linear-gradient(to bottom,
-      #434343,
-      #000);
+  background: -webkit-linear-gradient(to bottom, #434343, #000);
   background: linear-gradient(to bottom, #434343, #000);
 }
 
