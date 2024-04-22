@@ -2,13 +2,10 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const Payment = require('../models/payment');
 const Cart = require('../models/cart');
 const User = require('../models/user');
+const Order = require('../models/order');
 
 exports.processPayment = async (req, res) => {
     const { userId, tokenId } = req.body;
-
-    //TRY THIS IF DOENST WORK
-    //const userId = req.session.userId;
-
 
     try {
         const user = await User.findById(userId);
@@ -16,7 +13,7 @@ exports.processPayment = async (req, res) => {
             return res.status(404).send('User not found');
         }
 
-        const cart = await Cart.findOne({ user: userId })
+        const cart = await Cart.findOne({ user: userId });
         if (!cart) {
             return res.status(404).send('Cart not found');
         }
@@ -40,6 +37,14 @@ exports.processPayment = async (req, res) => {
             transactionId: charge.id
         });
         await payment.save();
+
+        // Link payment to the order using order ID
+        const order = await Order.findOne({ cart: cart._id });
+        if (!order) {
+            return res.status(404).send('Order not found');
+        }
+        order.payment = payment._id;
+        await order.save();
 
         // Optionally update cart status or clean up cart after successful payment
         // cart.product = [];
