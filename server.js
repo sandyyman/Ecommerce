@@ -14,7 +14,8 @@ const cartRoutes = require('./routes/cartRoute');
 const productRoutes = require("./routes/product");
 const bodyParser = require('body-parser');
 const stripe = require('stripe')('');
-const paymentRoutes = require("./routes/paymentRoutes")
+const paymentRoutes = require("./routes/paymentRoutes");
+const orderRoutes = require("./routes/orderRoute");
 
 app.use(bodyParser.json());
 app.use(express.json());
@@ -37,6 +38,7 @@ app.use('/cart', cartRoutes);
 app.use("/products", productRoutes);
 app.use("/payment", paymentRoutes);
 // app.use("/reviews", reviewRoutes);
+app.use("order", orderRoutes);
 
 app.use(globalErrHandler);
 
