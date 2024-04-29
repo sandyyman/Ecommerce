@@ -5,9 +5,10 @@ const User = require('../models/user');
 const Order = require('../models/order');
 
 exports.processPayment = async (req, res) => {
-    const { userId, tokenId } = req.body;
+    const {  tokenId } = req.body;
 
     try {
+        const userId = req.session.userAuth;
         const user = await User.findById(userId);
         if (!user) {
             return res.status(404).send('User not found');

@@ -2,7 +2,6 @@ const User = require("../models/user");
 const bcrypt = require("bcrypt");
 const { userProfileUpdateValidate } = require("../utils/userValidation");
 const appErr = require("../utils/appErr");
-const Cart = require("../models/cart");
 
 
 //registration
@@ -31,10 +30,8 @@ const register = async (req, res) => {
     });
 
     // Create a cart document for the user
-    const newCart = await Cart.create({ user_id: newUser._id });
 
     // Update the user document to include the cart reference
-    newUser.cart = newCart._id;
     await newUser.save();
 
     res.status(201).json({ success: true, data: newUser });
@@ -65,7 +62,6 @@ const loginUser = async (req, res) => {
 
     // Create session data
     req.session.userAuth = user._id;
-    req.session.cartId = user.cart
     // console.log(req.session);
 
     return res.status(200).json({ success: true, message: "Login successful" });
@@ -128,7 +124,7 @@ const getUserInfo = async (req, res) => {
   try {
     // checking if user is authenticated
     console.log(req.session.userAuth);
-    console.log(req.session.cartId);
+
     
     if (!req.session.userAuth) {
       return res.status(401).json({ success: false, message: "Unauthorized" });

@@ -8,8 +8,8 @@ function generateOrderId() {
 }
 
 exports.createOrder = async (req, res) => {
-    const { userId, cartId, totalAmount } = req.body;
-
+    const { cartId, totalAmount } = req.body;
+    const userId = req.session.userAuth;
     try {
         // Create the order
         const order = new Order({

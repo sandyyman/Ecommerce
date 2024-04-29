@@ -3,6 +3,6 @@ const router = express.Router();
 const paymentController = require('../controllers/paymentController');
 
 // Route to handle payment
-router.post('/checkout', paymentController.checkout);
+router.post('/checkout', paymentController.processPayment);
 
 module.exports = router;
