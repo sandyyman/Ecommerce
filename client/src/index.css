@@ -1,46 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400&display=swap");
 
+/*-------------------------
+-----Universal-Requirements-----------
+---------------------------*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style-type: none;
 }
 
-body {
-  background: #e9d4ff;
+img {
+  margin-right: 1rem;
 }
 
-/* font-family: "Poppins", sans-serif; */
-/* font-family: "Playfair Display", serif; */
-
-/* NavBar CSS*/
-.navbar {
-  font-family: "Poppins", sans-serif;
-  font-size: 17px;
-  line-height: 26px;
-  text-transform: uppercase;
-  box-shadow: 0 8px 6px -6px gray;
-  --webkit-box-shadow: 0 8px 6px -6px gray;
-  border-bottom: 0.35px solid gray !important;
+hr {
+  margin: 0;
 }
 
-.nav-link {
-  font-weight: 300;
+input[type="text"] {
+  width: 20rem;
+  padding: 0.25rem 1rem;
+  font-style: italic;
+  font-family: "Poppins";
+  border: 0.5px solid rgb(166, 157, 157);
 }
 
-.active {
-  border-bottom: 2px solid black;
+/*-------------------------
+-----Nav-section-----------
+---------------------------*/
+
+.nav-logo {
+  text-decoration: none;
+  color: #265a65;
 }
 
-.navbar-brand {
-  font-weight: 700;
-  font-family: 'robot', sans-serif;
-  letter-spacing: 3px;
-
+.logo-text {
+  display: inline;
+  font-family: 'playfair';
+  font-size: xx-large;
 }
 
-/* Page Not Found*/
+nav ul {
+  width: 100%;
+}
+
+.nav-list-1 {
+  font-size: smaller;
+  height: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-list-2 {
+  height: 5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-list-grid-container {
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  background-color: #575563;
+}
+
+.nav-list-grid-container li {
+  background-color: #575563;
+  border: 1px solid whitesmoke;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.nav-list-mar {
+  margin: 0;
+}
+
+.nav-list-flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+li:hover {
+  color: #55c7de;
+  cursor: pointer;
+}
+
+.nav-list-grid-container li:hover {
+  background-color: #55c7de;
+  color: whitesmoke !important;
+}
+
+
+/*-------------------------
+-----Home-Page-----------
+---------------------------*/
+/* Add specific styles for home page if needed */
+
+
+.nav-ul-hp {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.nav-ul-hp li {
+  box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 10px;
+  border-radius: 0.25rem;
+  text-align: center;
+  justify-content: center;
+}
+
+.item-hp {
+  text-decoration: none;
+  color: black
+}
+
+
+
+
+
+
+/*-------------------------
+-----Page-Not-Found-----------
+---------------------------*/
 .pnf {
   display: flex;
   min-height: 65vh;
@@ -62,7 +153,9 @@ body {
   margin-top: 10px;
 }
 
-/*about section */
+/*-------------------------
+-----About-section-----------
+---------------------------*/
 .aboutus .ex-head {
   display: flex;
   justify-content: center;
@@ -80,17 +173,14 @@ body {
   justify-items: center;
 }
 
-
-
-/* Footer Css*/
-
+/*-------------------------
+-----Footer-section-----------
+---------------------------*/
 .footer {
   color: white;
   padding: 25px;
   background: #000;
-  background: -webkit-linear-gradient(to bottom,
-      #434343,
-      #000);
+  background: -webkit-linear-gradient(to bottom, #434343, #000);
   background: linear-gradient(to bottom, #434343, #000);
 }
 
